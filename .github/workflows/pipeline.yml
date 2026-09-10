@@ -66,8 +66,9 @@ jobs:
 
       - name: Obtener version
         id: generar_version
-        run: echo "version=" >> "$GITHUB_OUTPUT"
-        run: cat VERSION > "$GITHUB_OUTPUT"
+        run: |
+          echo "version=" >> "$GITHUB_OUTPUT"
+          cat VERSION > "$GITHUB_OUTPUT"
 
       - name: Publicar el paquete
         uses: actions/upload-artifact@v4
